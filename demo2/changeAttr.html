@@ -31,13 +31,10 @@
 			yes.onclick=function(){
 				var names=document.getElementById('name').value,
 				count=document.getElementById('count').value;
-				console.log(typeof(names))
-				console.log(count)
-				//box.css(names:count)
-				box.style.background=count;
+				box.style[names]=count;
 			}
 			no.onclick=function(){
-				
+				box.removeAttribute("style")
 			}
 	</script>
 </body>
