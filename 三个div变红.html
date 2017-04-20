@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+	button{
+		text-align: center;
+	}
+	.span{
+		margin: 20px;
+		display: inline-block;
+		width: 100px;
+		height: 100px;
+		background: #000;
+	}
+	</style>
+</head>
+<body>
+	<div class="box">
+		<span class="span"></span>
+		<span class="span"></span>
+		<span class="span"></span>
+	</div>
+	<button id="btn">变红</button>
+	<script>
+	var btn=document.getElementById("btn"),
+		oSpan=document.getElementsByClassName("span");
+		btn.onclick=function() {
+			for(var i=0;i<oSpan.length;i++){
+				oSpan[i].style.background="red";
+			}
+		}
+	</script>
+</body>
+</html>

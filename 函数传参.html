@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+	#box{
+		width: 200px;
+		height: 200px;
+		background: red;
+	}
+	</style>
+</head>
+<body>
+	<label for="">
+		属性名：<input type="text" id="name">
+	</label><br>
+	<label for="">
+		属性值：<input type="text" id="count">
+	</label><br>
+	<p>
+		<button id="yes">确定</button><button id="no">重置</button>
+	</p>
+	<div id="box">
+		在上方输入框输入“属性名”及“属性值”，点击确定按钮查看效果。
+	</div>
+	<script>
+		var yes=document.getElementById('yes'),
+			no=document.getElementById('no'),
+			box=document.getElementById('box');
+			yes.onclick=function(){
+				var names=document.getElementById('name').value,
+				count=document.getElementById('count').value;
+				console.log(typeof(names))
+				console.log(count)
+				//box.css(names:count)
+				box.style.background=count;
+			}
+			no.onclick=function(){
+				
+			}
+	</script>
+</body>
+</html>

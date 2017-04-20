@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+	#uls{
+		display: none;
+	}
+	#uls li{
+		text-align: center;
+		width: 80px;
+		line-height: 40px;
+		list-style: none;
+		border:1px solid blue;
+	}
+	.close{
+		border-top:1px solid blue;
+	}
+	</style>
+</head>
+<body>
+	<button id="btn">输入法</button>
+	<ul id="uls">
+		<li>手写</li>
+		<li>拼音</li>
+		<li class="close">关闭</li>
+	</ul>
+	<script>
+	var btn=document.getElementById('btn'),
+		uls=document.getElementById('uls'),
+		close=document.getElementsByClassName('close')[0];
+	btn.onclick=function(){
+		uls.style.display="block";
+	}
+	close.onclick=function(){
+		uls.style.display="none";
+	}
+	</script>
+</body>
+</html>

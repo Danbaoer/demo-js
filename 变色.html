@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		.nav{
+			text-align: center;
+		}
+		.box{
+			width: 100px;
+			height: 100px;
+			background: #000;
+			margin:20px auto; 
+		}
+	</style>
+</head>
+<body>
+	<div class="nav">
+		<button class="btn">变宽</button>
+		<button class="btn">变高</button>
+		<button class="btn">变色</button>
+		<button class="btn">隐藏</button>
+		<button class="btn">重置</button>
+	</div>
+	<div class="box"></div>
+	<script>
+		var btn=document.getElementsByClassName("btn"),
+			box=document.getElementsByClassName("box")[0];
+		btn[0].onclick=function(){
+			box.style.width="200px";
+		}
+		btn[1].onclick=function(){
+			box.style.height="200px";
+		}
+		btn[2].onclick=function(){
+			box.style.background="red";
+		}
+		btn[3].onclick=function(){
+			box.style.display="none";
+		}
+		btn[4].onclick=function(){
+			box.style.display="block";
+		}
+	</script>
+</body>
+</html>
