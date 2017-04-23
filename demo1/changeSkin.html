@@ -10,29 +10,24 @@
 		button{
 			width: 25px;
 			height: 25px;
-			background: #000;
-			border:none;
+			border: none;
+			display: block;
+			float: left;
+			margin:3px; 
 		}
 		#red{
 			background: red;
-			color:red;
 		}
 		#green{
 			background: green;
-			color:green;
 		}
 		#blue{
 			background: blue;
-			color:blue;
 		}
-		.current{
-			width: 10px;
-			height: 10px;
-			background: #fff;
+		#uls{
+			clear: both;
 		}
-		.uls{
-		}
-		.uls li{
+		#uls li{
 			text-align: center;
 			border-right: 1px solid #fff;
 			color:#fff;
@@ -46,12 +41,12 @@
 </head>
 <body>
 	<div class="skin">
-		<button id="red" class="current">红</button>
-		<button id="green">绿</button>
-		<button id="blue">蓝</button>
+		<button id="red"></button>
+		<button id="green"></button>
+		<button id="blue"></button>
 	</div>
 	
-	<ul class="uls">
+	<ul id="uls">
 		<li>新闻</li>
 		<li>娱乐</li>
 		<li>体育</li>
@@ -60,20 +55,30 @@
 		<li>旅游</li>
 	</ul>
 	<script>
-		var red=document.getElementsByClassName("red")[0],green=document.getElementsByClassName("green")[0],
-			blue=document.getElementsByClassName("blue")[0],
-			uls=document.getElementsByClassName("uls")[0],
-			lis=document.getElementsByClassName("li")[0];
+		var red=document.getElementById("red"),green=document.getElementById("green"),
+			blue=document.getElementById("blue"),
+			uls=document.getElementById("uls"),
+			lis=document.getElementsByTagName("li");
+			for(var i=0;i<lis.length;i++){
+				console.log(lis[i])
+			}
+			
 			red.onclick=function(){
-				document.body.style.background="pink";
+				this.style.background="#fff";
+				this.style.border="5px solid red"
+				;document.body.style.background="pink";
 			}
 			green.onclick=function(){
+				this.style.background="#fff";
+				this.style.border="5px solid green";
 				document.body.style.background="#A3C5A8";
-				document.body.querySelector("li").style.background="green";
+				lis.style.background="green";
 			}
 			blue.onclick=function(){
+				this.style.background="#fff";
+				this.style.border="5px solid blue";
 				document.body.style.background="#ccc";
-				document.body.querySelector("li").style.background="blue";
+				lis.style.background="blue";
 			}
 	</script>
 </body>

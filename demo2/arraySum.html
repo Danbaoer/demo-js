@@ -19,9 +19,10 @@
 	<div id="box"></div>
 	<script>
 		var btn=document.getElementsByClassName("btn")[0],
-			box=document.getElementById("box"),
-			sum=0;
+			box=document.getElementById("box");
+			//获取文本框的值，用“，”分隔转化为数组，遍历数组求和
 		btn.onclick=function() {
+			var sum=0;
 			var txt=document.getElementById("txt").value;
 			arr=txt.split(",");
 			for(var i=0;i<arr.length;i++){
@@ -29,6 +30,7 @@
 			}
 			box.innerHTML=sum;
 		}
+
 	</script>
 </body>
 </html>
