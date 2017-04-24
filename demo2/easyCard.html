@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+	*{
+		list-style: none;
+		padding: 0;
+		margin: 0;
+	}
+	#nav{
+		background: #000;
+		height: 40px;
+		width: 300px;
+		line-height: 40px;
+	}
+	#nav li{
+		float: left;
+		color:#fff;
+		text-align: center;
+		width: 60px;
+	}
+	.warp{
+		width:300px;
+		height:200px;
+		border:1px solid #ccc;
+		overflow: hidden;
+	}
+	#box{
+		height:600px;
+	}
+	#box ol{
+		height:200px;
+	}
+	.bg{
+		background: #ccc;
+		color: #000;
+	}
+	</style>
+</head>
+<body>
+	<ul id="nav">
+		<li class="bg">第一课</li>
+		<li>第二课</li>
+		<li>第三课</li>
+	</ul>
+	<div class="warp">
+	<div id="box" style="margin-top:0">
+	<ol>
+		<li>网页特效原理分析</li>
+		<li>响应用户操作</li>
+		<li>提示框效果</li>
+		<li>事件驱动</li>
+		<li>元素属性操作</li>
+		<li>动手编写第一个</li>
+		<li>引入函数</li>
+		<li>网页换肤效果</li>
+		<li>展开、收缩播放列表效果</li>
+	</ol>
+	<ol>
+		<li>改变网页背景颜色</li>
+		<li>126邮箱全选效果</li>
+		<li>提示框效果</li>
+		<li>函数传参</li>
+		<li>循环及便利操作</li>
+		<li>典型循环的构成</li>
+		<li>innerHTML的使用</li>
+		<li>数组</li>
+		<li>字符串链接</li>
+	</ol>
+	<ol>
+		<li>什么是闭包</li>
+		<li>javascript出现的位置</li>
+		<li>程序调试方法</li>
+		<li>定时器的使用</li>
+		<li>自动播放的选项卡</li>
+		<li>数码时钟</li>
+		<li>站长站导航效果</li>
+		<li>网页换肤效果</li>
+		<li>展开、收缩播放列表效果</li>
+	</ol>
+	</div>
+	</div>
+	<script>
+		var navli=document.getElementById('nav').getElementsByTagName('li'),
+			ols=document.getElementById('box');
+			for(var i=0;i<navli.length;i++){
+				navli[i].index=i;
+				navli[i].onmouseover=function(){
+					for(var j=0;j<navli.length;j++){
+						navli[j].className="";
+					}
+				 navli[this.index].className='bg';
+				 ols.style.marginTop=-(this.index*200)+'px'
+				}	 
+			}
+			
+	</script>
+</body>
+</html>

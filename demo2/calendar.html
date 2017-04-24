@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		#box{
+			width: 300px;
+			height: 300px;
+			background: #ccc;
+		}
+		#up{
+			width: 300px;
+		}
+		#up p{
+			width: 60px;
+			height: 60px;
+			margin: 5px 3px;
+			text-align: center;
+			border:1px solid #000;
+			display: inline-block;
+			background: #000;
+			color:#fff;
+		}
+		#up p span{
+			display: block
+		}
+		#up p b{
+			line-height: 35px;
+			display: block
+		}
+		#info{
+			width: 280px;
+			height: 60px;
+			background: lightGrey;
+			margin: 0 auto;
+		}
+	</style>
+</head>
+<body>
+	<div id="box">
+		<div id="up">
+			<p><b>1</b><span>JAN</span></p>
+			<p><b>2</b><span>FER</span></p>
+			<p><b>3</b><span>MAR</span></p>
+			<p><b>4</b><span>APR</span></p>
+			<p><b>5</b><span>MAY</span></p>
+			<p><b>6</b><span>JUN</span></p>
+			<p><b>7</b><span>JUL</span></p>
+			<p><b>8</b><span>AUG</span></p>
+			<p><b>9</b><span>SEP</span></p>
+			<p><b>10</b><span>OCT</span></p>
+			<p><b>11</b><span>NOV</span></p>
+			<p><b>12</b><span>DEC</span></p>
+		</div>
+		<div id="info">
+			<p></p>
+			<p><span></span></p>
+		</div>
+	</div>
+	<script>
+		var ps=document.getElementsByTagName('p'),
+			info=document.getElementById('info');
+			var day=new Date();
+				data=day.getDate();
+				days=day.getMonth()-1;
+		for(var i=0;i<ps.length;i++){
+			ps[i].onmouseover=function(){
+				this.style.background="#ccc";
+				this.style.color="#000";
+				var content=document.createElement("p");
+				content.innerHTML="this.innerHTML"+days;
+				info.appendChild(content)
+			}
+			ps[i].onmouseout=function(){
+				this.style.background="#000";
+				this.style.color="#fff";
+			}
+		}
+		
+	</script>
+</body>
+</html>
