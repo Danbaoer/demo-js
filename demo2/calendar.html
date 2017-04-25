@@ -35,12 +35,16 @@
 			background: lightGrey;
 			margin: 0 auto;
 		}
+		#up .current{
+			background: #ccc;
+			color:red;
+		}
 	</style>
 </head>
 <body>
 	<div id="box">
 		<div id="up">
-			<p><b>1</b><span>JAN</span></p>
+			<p class="current"><b>1</b><span>JAN</span></p>
 			<p><b>2</b><span>FER</span></p>
 			<p><b>3</b><span>MAR</span></p>
 			<p><b>4</b><span>APR</span></p>
@@ -53,29 +57,43 @@
 			<p><b>11</b><span>NOV</span></p>
 			<p><b>12</b><span>DEC</span></p>
 		</div>
-		<div id="info">
-			<p></p>
-			<p><span></span></p>
+		<div>
+			<h3><strong>1</strong>月节日</h1>
+			<p class="info">元旦：1月1日至3日放假三天。</p>
 		</div>
 	</div>
 	<script>
 		var ps=document.getElementsByTagName('p'),
-			info=document.getElementById('info');
+			str=document.getElementsByTagName('strong')[0],
+			info=document.getElementsByClassName('info')[0];
 			var day=new Date();
 				data=day.getDate();
 				days=day.getMonth()-1;
+			var arr = [
+				"元旦：1月1日至3日放假三天。",
+				"春节：2月2日至8日放假7天。",
+				"妇女节：3月8日妇女节，与我无关。",
+				"清明节：4月3日至5日放假3天",
+				"劳动节：4月30日至5月2日放假3天。",
+				"端午节：6月4日至6日放假3天。",
+				"小暑：7月7日小暑。不放假。",
+				"七夕节：8月6日七夕节。不放假。",
+				"中秋节：9月10日至12日放假3天。",
+				"国庆节：10月1日至7日放假7天。",
+				"立冬：11月8日立冬。不放假。",
+				"艾滋病日:12月1日<br />废除奴隶制国际日:12月2日。"
+		];
 		for(var i=0;i<ps.length;i++){
+			ps[i].index=i;
 			ps[i].onmouseover=function(){
-				this.style.background="#ccc";
-				this.style.color="#000";
-				var content=document.createElement("p");
-				content.innerHTML="this.innerHTML"+days;
-				info.appendChild(content)
-			}
-			ps[i].onmouseout=function(){
-				this.style.background="#000";
-				this.style.color="#fff";
-			}
+				for(var j=0;j<ps.length;j++){
+					ps[j].className="";
+					this.className="current";
+					info.innerHTML=arr[this.index];
+					str.innerHTML=this.index+1;
+				 }
+				
+			} 
 		}
 		
 	</script>
