@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		*{
+			padding: 0;
+			margin: 0;
+			list-style: none;
+		}
+		#box{
+			width: 100px;
+			margin: 20px auto;
+		}
+		ul li{
+			line-height: 40px;
+		}
+	</style>
+</head>
+<body>
+	<div id="box">
+		<p><input type="checkbox" id="all">全选 <span id="resever">反选</span></p>
+		<ul>
+			<li><input type="checkbox"> 选项(一)</li>
+			<li><input type="checkbox"> 选项(二)</li>
+			<li><input type="checkbox"> 选项(三)</li>
+			<li><input type="checkbox"> 选项(四)</li>
+			<li><input type="checkbox"> 选项(五)</li>
+			<li><input type="checkbox"> 选项(六)</li>
+			<li><input type="checkbox"> 选项(七)</li>
+			<li><input type="checkbox"> 选项(八)</li>
+			<li><input type="checkbox"> 选项(九)</li>
+			<li><input type="checkbox"> 选项(十)</li>
+		</ul>
+	</div>
+	<script>
+	var all=document.getElementById('all'),
+		resever=document.getElementById('resever'),
+		check=document.getElementsByTagName('ul')[0].getElementsByTagName('input');
+		all.onclick=function(){
+			for(var i=0;i<check.length;i++){
+				if(this.checked==true){
+					check[i].checked='checked'
+				}else{
+					check[i].checked=false;
+				}
+			}
+		}
+		resever.onclick=function(){
+			for(var i=0;i<check.length;i++){
+				if(check[i].checked==true){
+					check[i].checked=false;
+				}else{
+					check[i].checked='checked';
+				}
+			}
+		}
+		
+		
+	</script>
+</body>
+</html>
