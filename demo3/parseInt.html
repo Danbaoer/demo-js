@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		input{
+			width: 40px;
+			height: 15px;
+			background: #ccc;
+			display: inline-block;
+			margin: 5px;
+		}
+		b{
+			display: inline-block;
+			width: 30px;
+			height: 15px;
+			background: #fff;
+		}
+	</style>
+</head>
+<body>
+	<input type="text" value="">+<input type="text" value="">=<b>?</b><button id="sum">求和</button>
+<script>
+	var sum=document.getElementById('sum');
+	sum.onclick=function() {
+		var input=document.getElementsByTagName('input'),
+			b=document.getElementsByTagName('b')[0];
+		(input[0].value=="" || input[1].value=="")?
+		alert("请输入数字!"):
+		b.innerHTML=parseInt(input[0].value)+parseInt(input[1].value)
+	}
+
+</script>
+</body>
+</html>

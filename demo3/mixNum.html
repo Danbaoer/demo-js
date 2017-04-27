@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		input{
+			width: 40px;
+			height: 15px;
+			background: #ccc;
+			display: inline-block;
+			margin: 5px;
+		}
+		b{
+			display: inline-block;
+			width: 30px;
+			height: 15px;
+			background: #fff;
+		}
+		#sum{
+			background: #ccc;
+		}
+	</style>
+</head>
+<body>
+	<input type="text" value="">vs<input type="text" value=""><button id="sum">最大的数是</button><b></b>
+<script>
+	var sum=document.getElementById('sum');
+	sum.onclick=function() {
+		var input=document.getElementsByTagName('input'),
+			b=document.getElementsByTagName('b')[0];
+		/*if(input[0].value=="" || input[1].value==""){
+			alert("请输入数字!")
+		}
+		if(parseInt(input[0].value)>parseInt(input[1].value)){
+			b.innerHTML=input[0].value
+		}else{
+			b.innerHTML=input[1].value
+		}*/
+		(input[0].value=="" || input[1].value=="")?
+		alert("请输入数字!"):
+		b.innerHTML=Math.max(input[0].value,input[1].value)
+	}
+
+</script>
+</body>
+</html>
