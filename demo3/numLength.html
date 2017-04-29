@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>判断数字的长度</title>
+</head>
+<body>
+	<input type="text">
+	<button id="btn">几位数</button>
+	<script>
+	var txt=document.getElementsByTagName('input')[0],
+		btn=document.getElementById("btn");
+		btn.onclick=function() {
+			var len=txt.value.length;
+			(txt.value=="")?
+			alert("请输入数字！"):
+			alert(
+				/^\d{2}$/.test(parseInt(txt.value))?
+			 "✔是两位数":
+			"这是"+len+"位数")
+		}
+	</script>
+</body>
+</html>

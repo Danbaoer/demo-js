@@ -1,0 +1,16 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>页面加载后累加，自加1</title>
+</head>
+<body>
+	<button id="btn">1</button>
+	<script>
+		setInterval(function() {
+			var btn=document.getElementById("btn");
+			btn.innerHTML++;
+		},1000)
+	</script>
+</body>
+</html>
