@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		#box{
+			width: 300px;
+			height: 200px;
+			background: #000;
+		}
+		#box p{
+			padding: 30px;
+			text-align: center;
+			color:#fff;
+			line-height: 30px;
+		}
+		#box span{
+			width: 30px;
+			display: inline-block;
+			background: #fff;
+			color:#000;
+		}
+		#box button{
+			display: inline-block;
+			color:#fff;
+			background: lightgreen;
+			width: 90%;
+			margin-left: 5%;
+			height: 40px;
+		}
+	</style>
+</head>
+<body>
+	<div id="box">
+		<p><span>01</span> 分钟 <span>40</span> 秒</p>
+		<button>启动</button>
+	</div>
+		<script>
+		 var spans=document.getElementsByTagName('span'),
+		 btn=document.getElementsByTagName("button")[0];
+		 btn.onclick=function() {
+		 	timer();
+		 }
+
+
+		 function timer () {
+		 	timer=setInterval(function(){
+		 		spans[1].innerHTML--;
+		 		if(spans[1].innerHTML<0){
+					spans[1].innerHTML=59;
+					spans[0].innerHTML=00;
+		 		}
+		 	},500)
+		 }
+		</script>
+</body>
+</html>
