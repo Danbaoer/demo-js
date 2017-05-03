@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		#box{
+			width: 250px;
+			height: 100px;
+			background: #000;
+		}
+		#box p{
+			padding: 30px;
+			text-align: center;
+			color:#fff;
+			line-height: 30px;
+		}
+		#box span{
+			width: 30px;
+			display: inline-block;
+			background: #fff;
+			color:#000;
+		}
+		#box button{
+			display: inline-block;
+			color:#fff;
+			background: lightgreen;
+			width: 90%;
+			margin-left: 5%;
+			height: 40px;
+		}
+	</style>
+</head>
+<body>
+	<div id="box">
+		<p><span> </span> 点 <span> </span> 分 <span> </span> 秒</p>
+	</div>
+		<script>
+		 var spans=document.getElementsByTagName('span');
+		function times () {
+			var date=new Date();
+				var hour=date.getHours();
+				var min=date.getMinutes();
+				var sec=date.getSeconds();
+				for(var i=0;i<spans.length;i++){
+					spans[0].innerHTML=hour;
+					spans[1].innerHTML=min;
+					spans[2].innerHTML=sec;
+				}
+		}
+		setInterval(times,1000)
+		</script>
+</body>
+</html>
