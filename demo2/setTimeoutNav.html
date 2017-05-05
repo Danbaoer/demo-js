@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+	*{
+		padding: 0;
+		margin: 0;
+		list-style: none;
+	}
+		#nav{ 
+			height: 40px;
+			background: blue; 
+		}
+		#nav ul{
+			display: flex;
+			width: 100%;
+		}
+		#nav li{ 
+			flex: 1; 
+			text-align: center;
+			color:#fff;
+			line-height: 40px;
+		}
+		 
+	</style>
+</head>
+<body>
+	<div id="nav">
+		<ul>
+			<li>站长之家</li>
+			<li>行业资讯</li>
+			<li>站长在线</li>
+			<li>网站运营</li>
+			<li>设计在线</li>
+			<li>网络编程</li>
+			<li>联盟资讯</li>
+			<li>服务器</li>
+		</ul>
+	</div>
+		<script>
+		 var lis=document.getElementsByTagName('li');
+		 for(var i=0;i<lis.length;i++){
+		 	lis[i].onmouseover=function() {
+				this.style.background="#fff";
+				this.style.color="#000";		 	
+		 	}
+		 }
+		 
+		</script>
+</body>
+</html>
